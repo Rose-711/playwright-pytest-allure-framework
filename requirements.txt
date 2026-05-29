@@ -1,0 +1,19 @@
+# Core
+pytest>=8.0,<9.0
+pytest-playwright>=0.4.0
+playwright>=1.50.0
+allure-pytest>=2.13.0
+
+# Parallel execution & retry
+pytest-xdist>=3.5.0
+pytest-rerunfailures>=14.0
+
+# Utilities
+PyYAML>=6.0
+python-dotenv>=1.0.0
+
+# Dev tools
+black>=24.0
+isort>=5.13
+flake8>=7.0
+pre-commit>=3.6

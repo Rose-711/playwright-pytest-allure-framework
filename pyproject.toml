@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "automation-test-framework"
+version = "1.0.0"
+description = "A Python + Playwright + Pytest + Allure automation testing framework"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pytest>=8.0,<9.0",
+    "pytest-playwright>=0.4.0",
+    "playwright>=1.50.0",
+    "allure-pytest>=2.13.0",
+    "pytest-xdist>=3.5.0",
+    "pytest-rerunfailures>=14.0",
+    "PyYAML>=6.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0",
+    "isort>=5.13",
+    "flake8>=7.0",
+    "pre-commit>=3.6",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = """
+    -v
+    -s
+    --strict-markers
+    --tb=short
+    --alluredir=reports/allure-results
+    --clean-alluredir
+"""
+
+[tool.black]
+line-length = 120
+target-version = ["py310", "py311", "py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 120

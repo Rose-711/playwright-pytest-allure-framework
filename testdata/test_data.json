@@ -1,0 +1,11 @@
+{
+  "valid_users": [
+    {"username": "admin", "password": "admin123", "expected": "success"},
+    {"username": "user1", "password": "pass123", "expected": "success"}
+  ],
+  "invalid_users": [
+    {"username": "", "password": "", "expected": "error"},
+    {"username": "wrong", "password": "wrong", "expected": "error"}
+  ],
+  "search_terms": ["Playwright", "Pytest", "Allure", "Python"]
+}
