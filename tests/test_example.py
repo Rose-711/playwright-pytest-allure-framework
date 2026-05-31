@@ -1,4 +1,7 @@
-"""Example test suite demonstrating framework features."""
+"""
+Example test suite demonstrating framework features.
+CI/CD 实操测试：修改此文件触发 GitHub Actions 自动运行。
+"""
 import allure
 import pytest
 from playwright.sync_api import expect
